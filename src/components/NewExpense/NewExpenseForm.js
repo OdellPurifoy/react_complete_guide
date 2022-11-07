@@ -26,6 +26,8 @@ const NewExpenseForm = () => {
             amount: enteredAmount,
             date: new Date(enteredDate),
         }
+
+        console.log(expenseData)
     }
 
     return(
