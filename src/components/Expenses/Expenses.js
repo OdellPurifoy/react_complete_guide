@@ -19,14 +19,18 @@ const Expenses = (props) => {
     <div>
       <Card className="expenses">
         <ExpensesFilter selected={filteredYear} onFilterChangeHandler={filterChangeHandler} />
-        {filteredExpenses.map((expense => (
-          <ExpenseItem
-            key={expense.id}
-            title={expense.title} 
-            amount={expense.amount} 
-            date={expense.date}
-          />
-        )))}
+        {filteredExpenses.length === 0 ? (
+          <p>No Expenses Found</p>
+          ) : (
+            filteredExpenses.map((expense => (
+              <ExpenseItem
+                key={expense.id}
+                title={expense.title} 
+                amount={expense.amount} 
+                date={expense.date}
+              />
+             ))
+          ))}
       </Card>
     </div>
   );
